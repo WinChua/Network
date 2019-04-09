@@ -1,0 +1,26 @@
+docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.1.254  netmask 255.255.255.0  broadcast 172.17.1.255
+        inet6 fe80::c052:fdff:fefa:64c3  prefixlen 64  scopeid 0x20<link>
+        ether 8a:f7:4f:f6:0e:f9  txqueuelen 1000  (Ethernet)
+        RX packets 708  bytes 56396 (56.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 180  bytes 14612 (14.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.10.0.1  netmask 255.255.255.0  broadcast 10.10.0.255
+        inet6 fe80::cb2:71ff:fee8:63de  prefixlen 64  scopeid 0x20<link>
+        ether 0e:b2:71:e8:63:de  txqueuelen 1000  (Ethernet)
+        RX packets 185  bytes 16182 (16.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 646  bytes 60224 (60.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+veth: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::88f7:4fff:fef6:ef9  prefixlen 64  scopeid 0x20<link>
+        ether 8a:f7:4f:f6:0e:f9  txqueuelen 1000  (Ethernet)
+        RX packets 709  bytes 66398 (66.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 193  bytes 15578 (15.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
