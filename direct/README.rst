@@ -1,9 +1,15 @@
-host1.route                              host2.route                       
-destination     gw          dev          Destination     Gateway     Iface                                                          
-10.10.0.0/24    0.0.0.0     eth1         10.10.0.0/24    0.0.0.0     eth1                              
-172.17.1.0/24   0.0.0.0     docker0      172.17.1.0/24   10.10.0.1   eth1                              
-172.17.2.0/24   10.10.0.2   eth1         172.17.1.254    10.10.0.1   eth1                              
-172.17.2.254    10.10.0.2   eth1         172.17.2.0/24   0.0.0.0     docker0                           
+route of host1, host2
+
+::
+
+   host1.route                              host2.route                       
+   destination     gw          dev          Destination     Gateway     Iface                                                          
+   10.10.0.0/24    0.0.0.0     eth1         10.10.0.0/24    0.0.0.0     eth1                              
+   172.17.1.0/24   0.0.0.0     docker0      172.17.1.0/24   10.10.0.1   eth1                              
+   172.17.2.0/24   10.10.0.2   eth1         172.17.1.254    10.10.0.1   eth1                              
+   172.17.2.254    10.10.0.2   eth1         172.17.2.0/24   0.0.0.0     docker0                           
+
+network struct
 
 ::
                                          
@@ -39,12 +45,17 @@ destination     gw          dev          Destination     Gateway     Iface
      |                                                                                            |        
      +--------------------------------------------------------------------------------------------+   
 
-con1.route                               con2.route                                       
-Destination     Gateway         Iface    Destination     Gateway         Iface
-10.10.0.0/24    172.17.1.254    eth0     10.10.0.0/24    172.17.2.254    eth0
-172.17.1.0/24   0.0.0.0         eth0     172.17.1.0/24   172.17.2.254    eth0
-172.17.2.0/24   172.17.1.254    eth0     172.17.1.254    172.17.2.254    eth0
-172.17.2.254    172.17.1.254    eth0     172.17.2.0/24   0.0.0.0         eth0
+
+route of con1, con2
+
+::
+
+   con1.route                               con2.route                                       
+   Destination     Gateway         Iface    Destination     Gateway         Iface
+   10.10.0.0/24    172.17.1.254    eth0     10.10.0.0/24    172.17.2.254    eth0
+   172.17.1.0/24   0.0.0.0         eth0     172.17.1.0/24   172.17.2.254    eth0
+   172.17.2.0/24   172.17.1.254    eth0     172.17.1.254    172.17.2.254    eth0
+   172.17.2.254    172.17.1.254    eth0     172.17.2.0/24   0.0.0.0         eth0
 
 ::
 
@@ -55,6 +66,7 @@ Destination     Gateway         Iface    Destination     Gateway         Iface
 test result
 
 ::
+
    ip netns exec con1 ping 172.17.2.1 -c 1
    PING 172.17.2.1 (172.17.2.1) 56(84) bytes of data.
    64 bytes from 172.17.2.1: icmp_seq=1 ttl=62 time=0.097 ms
